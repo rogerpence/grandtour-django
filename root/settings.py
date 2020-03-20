@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # Local apps
     'apps.users.apps.UsersConfig',
+    'apps.tourstops.apps.TourstopsConfig',
+    'apps.helpers.apps.HelpersConfig',
 ]
 
 AUTH_USER_MODEL = 'users.CustomUser'
@@ -58,7 +60,7 @@ ROOT_URLCONF = 'root.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        # 'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
