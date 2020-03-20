@@ -5,9 +5,12 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "pserver": "python manage.py runserver localhost:5000"
+    "pserver": "cross-env NODE_ENV=development python manage.py runserver localhost:5000"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "cross-env": "^7.0.2"
+  }
 }

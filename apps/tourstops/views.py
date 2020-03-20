@@ -3,11 +3,14 @@ from django.shortcuts import render
 from django.forms.models import model_to_dict
 import json
 from django.core import serializers
+import os
 
 
 # # Create your views here.
 from django.http import HttpResponse
 from django.http import JsonResponse
+
+from django.conf import settings
 # from django.http import Http404, HttpResponseRedirect
 # from django.shortcuts import get_object_or_404, render
 # from django.urls import reverse
@@ -25,12 +28,19 @@ class Index(View):
         # for tourstop in tourstops:
         #     distance.append(miles)
         #     miles += 21
+        if os.environ.get('DJANGO_DEV') is not None:
+            environment = 'dev'
+        else:
+            environment = 'prod'
+
+        environment = settings.TEMPLATES[0]['DIRS'][0]
 
         context = {
+            "environment": environment
             # "tourstops": tourstops,
             # "distance" : distance
         }
-        return render(request, 'tourstops/index.html', context)
+        return render(request, 'tourstops\index.html', context)
 
 
 # def show(request):
