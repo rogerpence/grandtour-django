@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/static/style.css">
     <title>{% block title %}My amazing site{% endblock %}</title>
     {% block header %}{% endblock %}
 </head>
 
 <body>
+    <div id="app"></div>
     <h1>Hello, world from helpers</h1>
     base template
     <br>
@@ -15,6 +16,7 @@
     <div id="content">
         {% block content %}{% endblock %}
     </div>
+    <script src="/static/tourstops.build.js"></script>
 </body>
 </html>
 

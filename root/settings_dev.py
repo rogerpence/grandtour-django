@@ -1,4 +1,13 @@
 import os
+import mimetypes
+
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = True
+
+# The Django server is sloppy about mime types. Add what you need here.
+mimetypes.add_type("application/javascript", ".js", True)
+mimetypes.add_type("text/css", ".css", True)
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 TEMPLATES = [
